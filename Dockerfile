@@ -36,6 +36,8 @@ RUN gem install scss_lint
 
 # Get Lint config
 RUN git clone https://bitbucket.org/garethhallnz/scss-lint-config.git
+RUN cd /scss-lint-config/ && git pull
+RUN mv /scss-lint-config/.scss-lint.yml ~/
 
 # Slim down image
 RUN apt-get clean \
@@ -50,3 +52,4 @@ RUN ruby -v
 RUN bundle -v
 RUN phpcs -i
 RUN scss-lint -v
+RUN ls -al ~/
