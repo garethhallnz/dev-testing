@@ -73,4 +73,4 @@ RUN phpcs -i
 RUN scss-lint -v
 RUN terminus --version
 RUN drush --version
-RUN drupal --version
+RUN which drupal
